@@ -12,7 +12,7 @@ internal struct MapProps {
     let userCoordinate: Coordinate?
     let pages: [PageInfo]
     let selected: Int
-    let routes: [String]
+    let route: String?
     let error: Error?
     let onRefresh: () -> Void
     let onSelectPagePoint: (Int) -> Void
@@ -44,7 +44,7 @@ internal class MapPresenter: NSObject, Presenter {
     private var cachedPages: [PageInfo] = []
     private var visiblePages: [PageInfo] = []
     
-    private var routes: [String] = []
+    private var route: String?
     
     private var selected: Int = .noSelectedPageIndex
     private var userCoordinate: Coordinate?
@@ -97,7 +97,7 @@ internal class MapPresenter: NSObject, Presenter {
         guard let data = notification.userInfo as? [String: String],
             let route = data[NotificationKeys.route] else { return }
         
-        routes = [route]
+        self.route = route
         renderCurrentState()
     }
     
@@ -121,14 +121,14 @@ internal class MapPresenter: NSObject, Presenter {
     private func renderCurrentState() {
         render(coordinate: userCoordinate,
                pages: visiblePages,
-               routes: routes,
+               route: route,
                selected: selected,
                state: state)
     }
     
     private func render(coordinate: Coordinate? = nil,
                         pages: [PageInfo] = [],
-                        routes: [String] = [],
+                        route: String? = nil,
                         selected: Int = .noSelectedPageIndex,
                         error: Error? = nil,
                         state: MapState = .regular) {
@@ -147,7 +147,7 @@ internal class MapPresenter: NSObject, Presenter {
         let props = MapProps(userCoordinate: coordinate,
                              pages: pages.compactMap { $0.convertToPageInfoProps() },
                              selected: selected,
-                             routes: routes,
+                             route: route,
                              error: error,
                              onRefresh: self.checkStatusAndFetchImageInfos,
                              onSelectPagePoint: onSelectPagePoint,

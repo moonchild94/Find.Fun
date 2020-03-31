@@ -16,6 +16,8 @@ internal class MapViewController: UIViewController {
     private enum Constants {
         static let clusterReuseIdentifier = "cluster"
         static let singleReuseIdentifier = "single"
+        
+        static let routingMapRectInsets = UIEdgeInsets(top: 50, left: 50.0, bottom: 290.0, right: 50.0)
     }
     
     @IBOutlet private weak var mapView: MKMapView!
@@ -141,9 +143,14 @@ extension MapViewController: MapRenderer {
             mapView.deselectAnnotation(mapView.selectedAnnotations[0], animated: true)
         }
         
-        if props.routes != oldProps?.routes {
+        if props.route != oldProps?.route {
             mapView.removeOverlays(mapView.overlays)
-            mapView.addOverlays(props.routes.compactMap { MKPolyline.from(encoded: $0) }, level: .aboveRoads)
+            if let route = props.route, let polyline = MKPolyline.from(encoded: route) {
+                mapView.addOverlay(polyline, level: .aboveRoads)
+                if props.state == .routing {
+                    mapView.setVisibleMapRect(polyline.boundingMapRect, edgePadding: Constants.routingMapRectInsets, animated: true)
+                }
+            }
         }
         
         applyMapState(props.state)
