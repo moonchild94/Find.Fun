@@ -182,6 +182,10 @@ extension MapViewController: MapRenderer {
     
     private func applyMapState(_ state: MapState) {
         refreshButton.isHidden = state != .regular
+        centerOnUserButton.layer.maskedCorners = state == .regular
+            ? [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+            : [.layerMinXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+
         mapView.setUserTrackingMode(state == .navigating ? .followWithHeading : .none, animated: true)
         
         if state == .regular {
