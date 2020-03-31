@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewController" customModule="Find_Fun" customModuleProvider="target">
+            <connections>
+                <outlet property="centerOnUserButton" destination="8Vg-Kg-yZs" id="hi3-yh-4zn"/>
+                <outlet property="mapView" destination="NgZ-Rw-SMm" id="MEx-uZ-TXG"/>
+                <outlet property="refreshButton" destination="6T5-qg-c09" id="Oge-jj-z76"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Bwj-RC-mWg"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NgZ-Rw-SMm">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </mapView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Y3k-PQ-inz">
+                    <rect key="frame" x="344" y="64" width="50" height="101"/>
+                    <subviews>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6T5-qg-c09" userLabel="Refresh Button">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <color key="backgroundColor" name="MapButtonsColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="jT5-Jl-cc2"/>
+                                <constraint firstAttribute="height" constant="50" id="k5q-c6-RIJ"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="contentEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
+                            <state key="normal" image="arrow.clockwise">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="onTapRefresh:" destination="-1" eventType="touchUpInside" id="8l6-65-z6o"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Vg-Kg-yZs" userLabel="Center On User Button">
+                            <rect key="frame" x="0.0" y="51" width="50" height="50"/>
+                            <color key="backgroundColor" name="MapButtonsColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="T4Y-ay-k18"/>
+                                <constraint firstAttribute="width" constant="50" id="jMM-Ut-tLQ"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="contentEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
+                            <state key="normal" image="location"/>
+                            <connections>
+                                <action selector="onTapCenterOnUser:" destination="-1" eventType="touchUpInside" id="C6z-yZ-f8D"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="NgZ-Rw-SMm" secondAttribute="trailing" id="BtD-5T-0ui"/>
+                <constraint firstItem="Y3k-PQ-inz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="ELw-Az-nNo"/>
+                <constraint firstItem="NgZ-Rw-SMm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZSO-09-kzv"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Y3k-PQ-inz" secondAttribute="trailing" constant="20" id="aWE-qf-ldG"/>
+                <constraint firstItem="NgZ-Rw-SMm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cdd-Os-kwj"/>
+                <constraint firstAttribute="bottom" secondItem="NgZ-Rw-SMm" secondAttribute="bottom" id="jgG-Cg-M56"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="120"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow.clockwise" width="15" height="18"/>
+        <image name="location" width="17" height="17"/>
+        <namedColor name="MapButtonsColor">
+            <color red="0.55699998140335083" green="0.55699998140335083" blue="0.57599997520446777" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PageDetailsViewController" customModule="Find_Fun" customModuleProvider="target">
+            <connections>
+                <outlet property="closeButton" destination="EVx-Fc-MGC" id="VzB-8t-fAD"/>
+                <outlet property="descriptionLabel" destination="sYS-Ps-4uZ" id="IuY-5n-sVG"/>
+                <outlet property="directionsButton" destination="ics-8a-IQm" id="mfM-cI-JKI"/>
+                <outlet property="directionsButtonHeightConstraint" destination="CcZ-U6-GP7" id="ZAv-w7-4Zx"/>
+                <outlet property="directionsButtonTopConstraint" destination="pSK-mN-Hde" id="Fae-7u-C6c"/>
+                <outlet property="hiddenDirectionsButtonHeightConstraint" destination="pQ3-RO-hp4" id="j40-rk-bPh"/>
+                <outlet property="hiddenDirectionsButtonTopConstraint" destination="KUL-y6-PSu" id="jER-VO-gkb"/>
+                <outlet property="linkLabel" destination="qO4-nw-pp6" id="k6J-0Q-uwG"/>
+                <outlet property="loadingImagesActivityIndicator" destination="Iw4-DF-Q8M" id="PVc-re-KSb"/>
+                <outlet property="photoGalleryView" destination="GwP-n6-k8q" id="RNG-3s-3eW"/>
+                <outlet property="titleLabel" destination="XKJ-vH-YuJ" id="Ktj-ws-l9H"/>
+                <outlet property="view" destination="iN0-l3-epB" id="6ed-1O-ypl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Kamppi" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKJ-vH-YuJ" userLabel="Title Label">
+                    <rect key="frame" x="16" y="60" width="90.5" height="31.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helsinki Subdivision" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYS-Ps-4uZ" userLabel="Description Label">
+                    <rect key="frame" x="16" y="91.5" width="333" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVx-Fc-MGC" userLabel="Close Button">
+                    <rect key="frame" x="365" y="56" width="33" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="EVx-Fc-MGC" secondAttribute="height" multiplier="1:1" id="S2d-6R-pdb"/>
+                    </constraints>
+                    <color key="tintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" image="xmark.circle.fill"/>
+                    <connections>
+                        <action selector="onTapCloseButton:" destination="-1" eventType="touchUpInside" id="djV-ZR-sNA"/>
+                    </connections>
+                </button>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ics-8a-IQm" userLabel="Directions Button">
+                    <rect key="frame" x="16" y="172.5" width="382" height="50"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="CcZ-U6-GP7"/>
+                        <constraint firstAttribute="height" id="pQ3-RO-hp4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                    <state key="normal" title="Directions">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="pQ3-RO-hp4"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="onTapDirectionButton:" destination="-1" eventType="touchUpInside" id="klT-b3-d4P"/>
+                    </connections>
+                </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="GwP-n6-k8q" userLabel="Photo Gallery View">
+                    <rect key="frame" x="0.0" y="238.5" width="414" height="200"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="s7T-UY-8Bj"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="2" minimumInteritemSpacing="0.0" id="odx-je-gt7">
+                        <size key="itemSize" width="0.0" height="0.0"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Iw4-DF-Q8M" userLabel="Loading Images Activity Indicator">
+                    <rect key="frame" x="197" y="328.5" width="20" height="20"/>
+                </activityIndicatorView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://en.wikipedia.org/wiki/Kamppi" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qO4-nw-pp6" userLabel="Link Label">
+                    <rect key="frame" x="16" y="120" width="382" height="20.5"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                    <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ics-8a-IQm" secondAttribute="trailing" constant="16" id="4Nf-eY-zuk"/>
+                <constraint firstItem="XKJ-vH-YuJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="5P8-OP-9af"/>
+                <constraint firstItem="EVx-Fc-MGC" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="12" id="9Rv-Cl-ogg"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EVx-Fc-MGC" secondAttribute="trailing" constant="16" id="Cwc-Tg-x6d"/>
+                <constraint firstItem="EVx-Fc-MGC" firstAttribute="bottom" secondItem="XKJ-vH-YuJ" secondAttribute="firstBaseline" constant="4" id="I9q-SU-jBZ"/>
+                <constraint firstItem="ics-8a-IQm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Ifa-Dn-F9o"/>
+                <constraint firstItem="ics-8a-IQm" firstAttribute="top" secondItem="qO4-nw-pp6" secondAttribute="bottom" id="KUL-y6-PSu"/>
+                <constraint firstItem="XKJ-vH-YuJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="OLc-il-W8e"/>
+                <constraint firstItem="sYS-Ps-4uZ" firstAttribute="top" secondItem="XKJ-vH-YuJ" secondAttribute="bottom" id="Qsi-8Q-Et9"/>
+                <constraint firstItem="Iw4-DF-Q8M" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="RE8-32-8zU"/>
+                <constraint firstItem="Iw4-DF-Q8M" firstAttribute="centerY" secondItem="GwP-n6-k8q" secondAttribute="centerY" id="YIV-LW-p9z"/>
+                <constraint firstItem="sYS-Ps-4uZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="biE-Sk-SXO"/>
+                <constraint firstItem="qO4-nw-pp6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="cEx-gc-6YY"/>
+                <constraint firstItem="GwP-n6-k8q" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="cGo-zM-p3J"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qO4-nw-pp6" secondAttribute="trailing" constant="16" id="hxg-tk-TfZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="GwP-n6-k8q" secondAttribute="trailing" id="iLi-m9-EY7"/>
+                <constraint firstItem="qO4-nw-pp6" firstAttribute="top" secondItem="sYS-Ps-4uZ" secondAttribute="bottom" constant="8" symbolic="YES" id="j6C-YO-6AR"/>
+                <constraint firstItem="EVx-Fc-MGC" firstAttribute="leading" secondItem="sYS-Ps-4uZ" secondAttribute="trailing" constant="16" id="ohS-n3-cHl"/>
+                <constraint firstItem="GwP-n6-k8q" firstAttribute="top" secondItem="ics-8a-IQm" secondAttribute="bottom" constant="16" id="pKg-EZ-r47"/>
+                <constraint firstItem="ics-8a-IQm" firstAttribute="top" secondItem="qO4-nw-pp6" secondAttribute="bottom" constant="32" id="pSK-mN-Hde"/>
+                <constraint firstItem="EVx-Fc-MGC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XKJ-vH-YuJ" secondAttribute="trailing" constant="16" id="sqT-qY-EuO"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="KUL-y6-PSu"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="139" y="141"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="xmark.circle.fill" width="17" height="17"/>
+    </resources>
+</document>

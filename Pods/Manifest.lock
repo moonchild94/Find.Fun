@@ -1,0 +1,44 @@
+PODS:
+  - Apollo (0.24.0):
+    - Apollo/Core (= 0.24.0)
+  - Apollo/Core (0.24.0)
+  - FloatingPanel (1.7.4)
+  - Kingfisher (5.13.2):
+    - Kingfisher/Core (= 5.13.2)
+  - Kingfisher/Core (5.13.2)
+  - MarqueeLabel (4.0.2)
+  - NotificationBannerSwift (3.0.2):
+    - MarqueeLabel (~> 4.0.0)
+    - SnapKit (~> 5.0.0)
+  - Polyline (4.2.1)
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - Apollo (= 0.24.0)
+  - FloatingPanel (= 1.7.4)
+  - Kingfisher (= 5.13.2)
+  - NotificationBannerSwift (= 3.0.2)
+  - Polyline (= 4.2.1)
+
+SPEC REPOS:
+  trunk:
+    - Apollo
+    - FloatingPanel
+    - Kingfisher
+    - MarqueeLabel
+    - NotificationBannerSwift
+    - Polyline
+    - SnapKit
+
+SPEC CHECKSUMS:
+  Apollo: ef7cf21a5f599c98a8699243f6a9922466405669
+  FloatingPanel: 3c9d0e30fe350e1613157557769d2ec97f76b96b
+  Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
+  MarqueeLabel: f762aa681ae201f66c1d511858b171f75d83013a
+  NotificationBannerSwift: 713e20f21b6105f4a36a00e5d9fa414a930d3d8e
+  Polyline: 0e9890790292741c8186201a536b6bb6a78d02dd
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: b9ab6260893c5ebb58a3a511025fab5ceba6223e
+
+COCOAPODS: 1.8.4

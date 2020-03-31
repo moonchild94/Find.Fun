@@ -1,0 +1,31 @@
+query Plan($fromPlace: String!, $toPlace: String!, $numItineraries: Int!, $transportModes: [TransportMode]!) {
+  plan(
+    fromPlace: $fromPlace,
+    toPlace: $toPlace,
+    numItineraries: $numItineraries,
+    transportModes: $transportModes,
+  ) {
+    itineraries{
+      walkDistance
+      duration
+      legs {
+        mode
+        startTime
+        endTime
+        from {
+          lat
+          lon
+        }
+        to {
+          lat
+          lon
+        }
+        distance
+        legGeometry {
+          length
+          points
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+${PODS_ROOT}/Target Support Files/Pods-Find.Fun/Pods-Find.Fun-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework
+${BUILT_PRODUCTS_DIR}/FloatingPanel/FloatingPanel.framework
+${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
+${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework
+${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework
+${BUILT_PRODUCTS_DIR}/Polyline/Polyline.framework
+${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
